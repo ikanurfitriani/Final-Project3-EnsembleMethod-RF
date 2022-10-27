@@ -5,4 +5,4 @@ Kelompok 8
 - Ika Nurfitriani
 - Muhammad Reesa R
 
-Link deployment: https://prediction-app-fp1-kel8.herokuapp.com/
+Link deployment: 
