@@ -1,8 +1,25 @@
 # Final-Project3-EnsembleMethod-RF
 ## Introduction
-**Kelompok 8**
-- Ervizal Buana J
-- Ika Nurfitriani
-- Muhammad Reesa R
+**KELOMPOK 8**
+<table>
+    <tr>
+      <td><b>Name</b></td>
+      <td><b>Student Code (H8)</b></td>
+    </tr>
+    <tr>
+      <td><b>Ervizal Buana Jatiputra</b></td>
+      <td><b>PYTN-KS10-007</b></td>
+    </tr>
+    <tr>
+      <td><b>Ika Nurfitriani</b></td>
+      <td><b>PYTN-KS10-008</b></td>
+    </tr>
+    <tr>
+      <td><b>Muhammad Reesa Rosyid</b></td>
+      <td><b>PYTN-KS10-014</b></td>
+    </tr>
+</table>
 
 Link deployment: -
+
+*Note: File ipynb dapat dipush ke github tetapi pada final project 3 ini kami tidak melakukan deployment ke heroku ataupun cloud platform lainnya. Dan visualisasi yang digunakan adalah visualisasi interaktif dengan library Plotly.*
