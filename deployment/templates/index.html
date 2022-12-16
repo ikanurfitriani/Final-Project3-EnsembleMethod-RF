@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <title>Heart Failure Prediction App</title>
+    </head>
+    <body class="flex flex-col justify-between item-center p-8 min-h-screen text-gray-800 md:flex-row"
+        style="background-image: url(static/img/bg2.jpg); ">
+        <main class="bg-white p-16 rounded-lg">
+            <h1 class="text-3xl font-bold mb-8">
+                Prediction of Death from Heart Failure:
+            </h1>
+
+            <form action="{{url_for('predict')}}" method="POST" class="flex flex-col">
+                <label for="inputMinTemp"><b>Age</b>
+                <p><i>(Patient age)</i></p>
+                </label>
+				<input id="inputage" name="age" 
+				class="p-4 bg-gray-100 rounded-md" placeholder="Patient age" min="40" step="1" max="95" type="number" required>
+
+                <label for="inputcreatinine_phosphokinase"><b>Creatinine phosphokinasel</b>
+                <p><i>(CPK enzyme levels)</i></p>
+                </label>
+				<input id="inputcreatinine_phosphokinase" name="creatinine_phosphokinase" 
+				class="p-4 bg-gray-100 rounded-md" placeholder="In mcg/L" min="20" step="0.1" max="7900" type="number" required>
+
+                <label for="inputejection_fraction"><b>Ejection fraction</b>
+                <p><i>(The percentage of blood leaving the heart in the percentage of each cardiac contraction)</i></p>
+                </label>
+				<input id="inputejection_fraction" name="ejection_fraction" 
+				class="p-4 bg-gray-100 rounded-md" placeholder="In Percent" min="0" step="0.1" max="100" type="number" required>
+
+                <label for="inputplatelets"><b>Platelets</b>
+                <p><i>(The number of platelets in the blood)</i></p>
+                </label>
+				<input id="inputplatelets" name="platelets" 
+				class="p-4 bg-gray-100 rounded-md" placeholder="In kiloplatelets/mL" min="0" step = "0.01" max="2000" type="number" required>
+
+                <label for="inputserum_creatinine"><b>Serum creatinine</b>
+                <p><i>(serum creatinine level in blood)</i></p>
+                </label>
+				<input id="inputserum_creatinine" name="serum_creatinine" 
+				class="p-4 bg-gray-100 rounded-md" placeholder="In mg/dL" min="-10" step = "0.01" max="10" type="number" required>
+
+                <label for="inputserum_sodium"><b>Serum sodium</b>
+                <p><i>(Serum sodium level in blood)</i></p></label>
+				<input id="inputserum_sodium" name="serum_sodium" 
+				class="p-4 bg-gray-100 rounded-md" placeholder="In mEq/L" min="0" max="200000000000000" step = "1" type="number" required>
+
+                <label for="inputtime"><b>Time</b>
+                <p><i>(Time of day for follow-up)</i></p>
+                </label>
+				<input id="inputtime" name="time" 
+				class="p-4 bg-gray-100 rounded-md" placeholder="In day" min="0" step="1" max="300" type="number" required>
+
+                <button type="submit" class="flex justify-center align-center mt-8 p-4 bg-gradient-to-r
+                from-blue-400 to-yellow-500 text-white rounded-md">
+                    PREDICT NOW
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-arrow-right ml-4">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </form>
+        </main>
+        <section class="mt-8 h-full flex-auto rounded-lg md:mt-0 md:ml-8">
+            <div class="bg-white p-16 rounded-lg">
+                <h1 class="text-2xl mb-8">
+                    <b>Prediction Result:</b>
+                </h1>
+                <h2 class="text-5xl font-bold">
+                    {{prediction}}
+                </h2>
+                <div class="mt-8">
+                    <p><b>According To:</b></p>
+                    <p>Age: {{age}}</p>
+                    <p>Creatinine phosphokinase: {{creatinine_phosphokinase}}</p>
+                    <p>Ejection fraction: {{ejection_fraction}}</p>
+                    <p>Platelets: {{platelets}}</p>
+                    <p>Serum creatinine: {{serum_creatinine}}</p>
+                    <p>Serum sodium: {{serum_sodium}}</p>
+                    <p>Time: {{time}}</p>
+                </div>
+            </div>
+            <div class="bg-white p-16 rounded-lg mt-8">
+                <h1 class="text-2xl mb-8">
+                    <b>About Us:</b>
+                </h1>
+                <div class="mt-8">
+                    <p>Ervizal Buana J</p>
+                    <p>Ika Nurfitriani</p>
+                    <p>Muhammad Reesa R</p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
